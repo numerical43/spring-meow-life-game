@@ -77,7 +77,7 @@ switch(select){
     }
   }
   ``` 
-  > static 변수로 boolean status를 설정한다. 회원가입 코드를 while문으로 감싸고 수행이 완료되면 status를 false로 초기화하여 종료
+  > boolean status를 설정한다. 회원가입 코드를 while문으로 감싸고 수행이 완료되면 status를 false로 초기화하여 종료
 
 
 <br>
