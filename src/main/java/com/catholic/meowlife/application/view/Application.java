@@ -1,4 +1,4 @@
-package com.mazerunners.mazegame.application.view;
+package com.catholic.meowlife.application.view;
 
 public class Application {
 
