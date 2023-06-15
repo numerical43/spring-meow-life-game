@@ -6,9 +6,5 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PlayerDB {
-    public static Map<String, PlayerEntity> playerMap;
-
-    public PlayerDB() {
-        playerMap = new HashMap<>();
-    }
+    public static Map<String, PlayerEntity> playerMap = new HashMap<>();
 }
