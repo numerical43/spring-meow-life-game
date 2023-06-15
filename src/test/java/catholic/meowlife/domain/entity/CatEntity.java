@@ -1,4 +1,4 @@
-package com.catholic.meowlife.domain.entity;
+package catholic.meowlife.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +16,5 @@ public class CatEntity {
     private int weight;
     private int exp;
 
-    public void updateEnergy(int energy){
-        this.energy = energy;
-    }
+
 }
