@@ -13,4 +13,5 @@ public class PlayerEntity {
     private String id;
     private String pw;
     private String name;
+    private boolean login;
 }
