@@ -7,6 +7,7 @@ import com.catholic.meowlife.domain.entity.CatEntity;
 import com.catholic.meowlife.domain.entity.PlayerEntity;
 import com.catholic.meowlife.domain.service.IdCheckService;
 import com.catholic.meowlife.dto.PlayerDTO;
+import com.catholic.meowlife.infra.DB.PlayerDB;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -36,5 +37,10 @@ public class ContextConfiguration {
     @Bean
     RegisterController registerController() {
         return new RegisterController();
+    }
+
+    @Bean
+    PlayerDB playerDB() {
+        return new PlayerDB();
     }
 }

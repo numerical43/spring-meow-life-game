@@ -1,5 +1,4 @@
 package com.catholic.meowlife.application.controller;
-
 import com.catholic.meowlife.application.service.RegisterService;
 import com.catholic.meowlife.dto.PlayerDTO;
 import org.springframework.beans.factory.annotation.Autowired;

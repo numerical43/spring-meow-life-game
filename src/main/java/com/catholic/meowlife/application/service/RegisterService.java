@@ -1,6 +1,5 @@
 package com.catholic.meowlife.application.service;
 
-import com.catholic.meowlife.domain.entity.PlayerEntity;
 import com.catholic.meowlife.domain.repository.PlayerRepository;
 import com.catholic.meowlife.domain.service.IdCheckService;
 import com.catholic.meowlife.dto.PlayerDTO;
@@ -21,23 +20,21 @@ public class RegisterService {
     @Autowired
     PlayerRepository playerRepository;
 
-    public Map<String, PlayerEntity> signIn(PlayerDTO playerDTO) {
+    public String signIn(PlayerDTO playerDTO) {
 
         this.playerDTO = playerDTO;
 
-        if(idCheckService.checkPwLength(playerDTO)
-        &&idCheckService.checkIdLength(playerDTO)
-        &&idCheckService.checkCorrectId(playerDTO)){
-            playerRepository.addPlayer(playerDTO. getId(),playerDTO.getPw(),playerDTO.getName());
-
-//            PlayerDB.getPlayerMap().put(playerDTO.getId(),
-//                    new PlayerEntity(playerDTO.getId(), playerDTO.getPw(), playerDTO.getName()));
+        try {
+            if (idCheckService.checkPwLength(playerDTO)
+                    && idCheckService.checkIdLength(playerDTO)
+                    && idCheckService.checkCorrectId(playerDTO)) {
+                playerRepository.addPlayer(playerDTO);
+            }
+            return PlayerDB.getPlayerMap().toString();
+        } catch (IllegalArgumentException e){
+            return "error";
         }
-
-        return PlayerDB.getPlayerMap();
     }
-
-
 
 
 }

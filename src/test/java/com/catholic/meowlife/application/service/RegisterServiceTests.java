@@ -26,12 +26,12 @@ public class RegisterServiceTests {
     @Test
     public void checkCreatePlayer(){
 
-        Map<String, PlayerEntity> map
+        String map
         = registerService.signIn(new PlayerDTO("player01", "testCreate", "테스트"));
 
         context.getBean("registerService", RegisterService.class);
 
-        Assertions.assertEquals(map,PlayerDB.getPlayerMap());
+        Assertions.assertEquals(map,PlayerDB.getPlayerMap().toString());
     }
 
 }
