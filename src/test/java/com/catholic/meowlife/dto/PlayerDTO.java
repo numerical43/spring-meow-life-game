@@ -1,6 +1,8 @@
 package com.catholic.meowlife.dto;
 
+import com.catholic.meowlife.domain.entity.PlayerEntity;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @AllArgsConstructor

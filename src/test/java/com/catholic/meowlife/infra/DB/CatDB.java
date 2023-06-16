@@ -1,5 +1,6 @@
 package com.catholic.meowlife.infra.DB;
 
+
 import com.catholic.meowlife.domain.entity.CatEntity;
 import com.catholic.meowlife.domain.entity.PlayerEntity;
 import org.springframework.stereotype.Component;

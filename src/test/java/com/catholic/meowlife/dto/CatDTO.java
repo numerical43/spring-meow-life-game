@@ -1,6 +1,8 @@
 package com.catholic.meowlife.dto;
 
+import com.catholic.meowlife.domain.entity.CatEntity;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
@@ -13,7 +15,7 @@ public class CatDTO {
     private String catName;
     private String catBreeds;
     private int energy;
-    private double weight;
+    private int weight;
     private int exp;
     private int level;
 }
