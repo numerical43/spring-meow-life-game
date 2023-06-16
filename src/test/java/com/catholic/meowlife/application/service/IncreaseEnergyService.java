@@ -8,6 +8,7 @@ import com.catholic.meowlife.dto.CatDTO;
 import com.catholic.meowlife.infra.DB.CatDB;
 import com.catholic.meowlife.infra.DB.PlayerDB;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class IncreaseEnergyService {
     EnergyCheckService energyCheckService;
 
 
-
+    @DisplayName("에너지가 30이하인지, 0인지 확인하고 해당값을 체크리스트에 담는지 확인")
     @Test
     public void eatCat(){
         CatDTO catDTO1 = new CatDTO("미로","코숏",20,2, 1,1);
