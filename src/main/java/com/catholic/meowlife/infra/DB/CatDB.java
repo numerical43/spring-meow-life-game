@@ -9,9 +9,9 @@ import java.util.Map;
 
 @Component
 public class CatDB {
-    private static Map<PlayerEntity, CatEntity> catMap = new HashMap<>();
+    private static Map<String, CatEntity> catMap = new HashMap<>();
 
-    public static Map<PlayerEntity, CatEntity> getCatMap() {
+    public static Map<String, CatEntity> getCatMap() {
         return catMap;
     }
 }
