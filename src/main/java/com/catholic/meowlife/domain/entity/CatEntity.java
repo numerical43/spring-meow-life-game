@@ -13,6 +13,7 @@ public class CatEntity {
     private String catName;
     private String catBreeds;
     private int energy;
-    private int weight;
+    private double weight;
     private int exp;
 }
+
