@@ -10,6 +10,6 @@ public class LoginController {
     LoginService loginService;
 
     public void loginService(String id, String pw) {
-
+        loginService.logIn(id, pw);
     }
 }

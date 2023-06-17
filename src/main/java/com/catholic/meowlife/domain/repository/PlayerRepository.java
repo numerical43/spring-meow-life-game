@@ -10,33 +10,29 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class PlayerRepository {
-
     @Autowired
     PlayerEntity playerEntity;
     @Autowired
     CatEntity catEntity;
 
     @Autowired
-    PlayerDB playerDB;
-    @Autowired
-    CatDB catDB;
+    PlayerDTO loginPlayer;
 
 
 
     public void returnDBIdPw(String userId,String userPw){
-        playerEntity = playerDB.getPlayerMap().get(userId);
-        String pw = playerEntity.getPw();
+        PlayerEntity storedPlayer = PlayerDB.getPlayerMap().get(userId);
 
-        if(playerEntity == null || !userId.equals(playerEntity.getId())){
-            throw new IllegalArgumentException();
+        if(storedPlayer == null || !userId.equals(storedPlayer.getId())){
+            throw new IllegalArgumentException("아이디가 일치하지 않습니다.");
         }
-        if(pw == null || !pw.equals(userPw)){
-            throw new IllegalArgumentException();
+        if(storedPlayer.getPw() == null || !storedPlayer.getPw().equals(userPw)){
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
         }
     }
 
     public Boolean HasCat(String userId) {
-        catEntity = catDB.getCatMap().get(userId);
+        catEntity = CatDB.getCatMap().get(userId);
 
         if(catEntity == null){
             return false;
