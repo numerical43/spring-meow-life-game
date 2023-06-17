@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @ToString
 @Component
 public class PlayerDTO {
-    public static PlayerDTO loginPlayer;
     private String id;
     private String pw;
     private String name;
+    private boolean login;
 }
