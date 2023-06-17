@@ -1,4 +1,4 @@
-package com.catholic.meowlife.domain.entity;
+package com.catholic.meowlife.dto;
 
 import lombok.*;
 import org.springframework.stereotype.Component;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @ToString
 @Component
-public class CatEntity {
+public class CatDTO {
     private String catName;
     private String catBreeds;
     private int energy;
