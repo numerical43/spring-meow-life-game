@@ -37,8 +37,8 @@ public class IdCheckServiceTests {
         playerDTO.setId("플레이어01");
         playerDTO.setPw("testCorrectId");
         playerDTO.setName("테스트");
-        //Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkCorrectId(playerDTO));
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkCorrectId(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkCorrectId(playerDTO));
+        //Assertions.assertDoesNotThrow( () -> idCheckService.checkCorrectId(playerDTO));
     }
 
     @DisplayName("아이디 특수문자 입력 시 예외처리")
@@ -47,7 +47,16 @@ public class IdCheckServiceTests {
         playerDTO.setId("player*");
         playerDTO.setPw("testCorrectId");
         playerDTO.setName("테스트");
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkCorrectId(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkCorrectId(playerDTO));
+    }
+
+    @DisplayName("비밀번호 특수문자 입력 시 예외처리")
+    @Test
+    public void checkCorrectPw2(){
+        playerDTO.setId("player");
+        playerDTO.setPw("test***");
+        playerDTO.setName("테스트");
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkCorrectPw(playerDTO));
     }
 
     @DisplayName("아이디 공백 입력 시 예외처리")
@@ -56,7 +65,7 @@ public class IdCheckServiceTests {
         playerDTO.setId("player 01");
         playerDTO.setPw("testCorrectID");
         playerDTO.setName("테스트");
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkCorrectId(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkCorrectId(playerDTO));
     }
 
     @DisplayName("아이디 5자 미만일 때 예외처리")
@@ -65,7 +74,7 @@ public class IdCheckServiceTests {
         playerDTO.setId("p01");
         playerDTO.setPw("testCorrectID");
         playerDTO.setName("테스트");
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkIdLength(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkIdLength(playerDTO));
     }
 
     @DisplayName("아이디 20자 초과일 때 예외처리")
@@ -74,7 +83,7 @@ public class IdCheckServiceTests {
         playerDTO.setId("playerplayerplayerplayerplayer");
         playerDTO.setPw("testCorrectID");
         playerDTO.setName("테스트");
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkIdLength(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkIdLength(playerDTO));
     }
 
     @DisplayName("비밀번호 5자 미만일 때 예외처리")
@@ -83,7 +92,7 @@ public class IdCheckServiceTests {
         playerDTO.setId("player01");
         playerDTO.setPw("pw");
         playerDTO.setName("테스트");
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkPwLength(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkPwLength(playerDTO));
 
     }
 
@@ -93,6 +102,6 @@ public class IdCheckServiceTests {
         playerDTO.setId("player01");
         playerDTO.setPw("passwordpasswordpasswordpasswordpassword");
         playerDTO.setName("테스트");
-        Assertions.assertDoesNotThrow( () -> idCheckService.checkPwLength(playerDTO));
+        Assertions.assertThrows( IllegalArgumentException.class, () -> idCheckService.checkPwLength(playerDTO));
     }
 }

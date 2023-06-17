@@ -23,17 +23,13 @@ public class RegisterService {
     public String signIn(PlayerDTO playerDTO) {
 
         this.playerDTO = playerDTO;
-
-        try {
-            if (idCheckService.checkPwLength(playerDTO)
+            if (idCheckService.checkDuplicateId(playerDTO)
+                    && idCheckService.checkPwLength(playerDTO)
                     && idCheckService.checkIdLength(playerDTO)
                     && idCheckService.checkCorrectId(playerDTO)) {
                 playerRepository.addPlayer(playerDTO);
             }
             return PlayerDB.getPlayerMap().toString();
-        } catch (IllegalArgumentException e){
-            return "error";
-        }
     }
 
 
