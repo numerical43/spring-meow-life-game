@@ -7,5 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CatDB {
-    public static Map<PlayerEntity, CatEntity> catMap = new HashMap<>();
+    public static Map<String, CatEntity> catMap = new HashMap<>();
+
+    public static Map<String, CatEntity> getCatMap() {
+        return catMap;
+    }
 }

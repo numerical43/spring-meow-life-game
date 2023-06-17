@@ -15,4 +15,5 @@ public class CatEntity {
     private int energy;
     private int weight;
     private int exp;
+    private int level;
 }

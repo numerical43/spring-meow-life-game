@@ -14,7 +14,9 @@ public class Application {
 
     public static void main(String[] args) {
 
-        while(true) {
+        boolean stopLoop = false;
+
+        while(!stopLoop) {
             Scanner sc = new Scanner(System.in);
 
             System.out.print("아이디: ");
@@ -31,6 +33,9 @@ public class Application {
             RegisterController registerController = context.getBean("registerController", RegisterController.class);
 
             registerController.gotoRegisterService(new PlayerDTO(id, pw, name));
+
+
+
         }
     }
 }
