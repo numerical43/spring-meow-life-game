@@ -12,15 +12,15 @@ public class EnergyCheckService {
 
     public boolean checkEnergyZero(CatDTO catDTO){
         if(catDTO.getEnergy()==0){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public boolean checkLowEnergy(CatDTO catDTO) {
         if(catDTO.getEnergy()<=30){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }
