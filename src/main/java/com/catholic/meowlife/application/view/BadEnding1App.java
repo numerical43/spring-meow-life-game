@@ -8,6 +8,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class BadEnding1App {
+    @Autowired
+    CreateCatView createCatView;
     public void getName(String catName){
 
         System.out.println("당신은 " + catName + " 학대죄로 체포되었습니다. 평생 감옥에서 살게 됐습니다. ");
@@ -34,8 +36,7 @@ public class BadEnding1App {
 
         System.out.println("");
 
-
-        //고양이 생성 서비스로 이동
+        createCatView.createCatView();
     }
 
 }

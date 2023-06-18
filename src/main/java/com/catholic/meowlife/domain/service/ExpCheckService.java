@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ExpCheckService {
-    public boolean isExpReached100(CatDTO catDTO) {
+    public boolean checkEXPMax(CatDTO catDTO) {
         return catDTO.getExp() >= 100;
     }
 }

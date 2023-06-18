@@ -17,8 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CatRepository {
 
-    @Autowired
-    private CatDB catDB;
 
     @Autowired
     private CatEntity catEntity;
@@ -54,10 +52,12 @@ public class CatRepository {
     
     public void createCatInDB(String catName, String catBreeds) {
         catEntity = new CatEntity(catName, catBreeds, 50, 2, 0, 1);
+        playerEntity = PlayerDB.getPlayerMap().get(playerDTO.getId());
         CatDB.getCatMap().put(playerEntity.getId(), catEntity);
     }
   
     public void deleteCatDB(){
-        CatDB.getCatMap().remove(playerDTO.getId());
-}
+        CatDB.getCatMap().remove(PlayerDTO.loginPlayer.getId());
+    }
+
 }

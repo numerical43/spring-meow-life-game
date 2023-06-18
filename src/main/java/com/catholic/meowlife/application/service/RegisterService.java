@@ -28,7 +28,7 @@ public class RegisterService {
                     && idCheckService.checkPwLength(playerDTO)
                     && idCheckService.checkIdLength(playerDTO)
                     && idCheckService.checkCorrectId(playerDTO)) {
-//                playerRepository.addPlayer(playerDTO);
+                playerRepository.addPlayer(playerDTO);
                 return true;
             }
             else {

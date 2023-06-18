@@ -61,14 +61,15 @@ public class RegisterView {
 
                 RegisterController registerController = context.getBean("registerController", RegisterController.class);
 
-                boolean result = registerController.gotoRegisterService(new PlayerDTO(id, pw, name));
-                if (result){
-                    break;
-                }
+                registerController.gotoRegisterService(new PlayerDTO(id, pw, name));
+//                if (result){
+//                    break;
+//                }
+                break;
             }catch (IllegalArgumentException e){
                 System.out.println(e.getMessage().toString());
             }
         }
-        playerRepository.addPlayer(playerDTO);
+//        playerRepository.addPlayer(playerDTO);
     }
 }

@@ -6,9 +6,6 @@ import com.catholic.meowlife.domain.entity.PlayerEntity;
 import com.catholic.meowlife.dto.PlayerDTO;
 import com.catholic.meowlife.infra.DB.CatDB;
 
-import com.catholic.meowlife.domain.entity.PlayerEntity;
-import com.catholic.meowlife.dto.PlayerDTO;
-
 import com.catholic.meowlife.infra.DB.PlayerDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -43,9 +40,17 @@ public class PlayerRepository {
     }
 
     public void addPlayer(PlayerDTO playerDto){
-        playerEntity.setId(playerDto.getId());
-        playerEntity.setPw(playerDto.getPw());
-        playerEntity.setPw(playerDto.getName());
+//        playerEntity.setId(playerDto.getId());
+//        playerEntity.setPw(playerDto.getPw());
+//        playerEntity.setPw(playerDto.getName());
+
+        playerEntity = new PlayerEntity(playerDto.getId(), playerDto.getPw(), playerDto.getName());
+
         PlayerDB.getPlayerMap().put(playerDto.getId(), playerEntity);
+    }
+
+    public PlayerEntity getPlayerEntity(String loginId) {
+        playerEntity = PlayerDB.getPlayerMap().get(loginId);
+        return playerEntity;
     }
 }

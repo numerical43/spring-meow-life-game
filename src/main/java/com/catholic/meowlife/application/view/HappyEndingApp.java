@@ -1,6 +1,11 @@
 package com.catholic.meowlife.application.view;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class HappyEndingApp {
+    @Autowired
+    CreateCatView createCatView;
+
     public void getName(String catName){
         System.out.println("!!!고양이가 LEVEL5가 되었습니다!!!");
         System.out.println("당신은 " + catName + " 키우기에 성공했습니다. 평생 함께 행복하게 사세용 ");
@@ -29,6 +34,6 @@ public class HappyEndingApp {
 
         System.out.println("");
 
-        //고양이 생성 서비스로 이동
+        createCatView.createCatView();
     }
 }
