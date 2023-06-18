@@ -29,7 +29,7 @@ public class ExpCheckServiceTests {
         CatDTO catDTO = new CatDTO("미미", "코숏", 50, 1, 100, 1);
 
         //when
-        boolean result = expCheckService.isExpReached100(catDTO.getExp());
+        boolean result = expCheckService.isExpReached100(catDTO);
 
         //then
         assertTrue(result);
@@ -43,7 +43,7 @@ public class ExpCheckServiceTests {
         CatDTO catDTO = new CatDTO("미미", "코숏", 50, 1, 10, 1);
 
         //when
-        boolean result = expCheckService.isExpReached100(catDTO.getExp());
+        boolean result = expCheckService.isExpReached100(catDTO);
 
         //then
         assertFalse(result);
@@ -57,7 +57,7 @@ public class ExpCheckServiceTests {
         CatDTO catDTO = new CatDTO("미미", "코숏", 50, 1, 100, 1);
 
         //when
-        boolean result = expCheckService.isExpReached100(catDTO.getExp());
+        boolean result = expCheckService.isExpReached100(catDTO);
 
         //then
         assertTrue(result);
