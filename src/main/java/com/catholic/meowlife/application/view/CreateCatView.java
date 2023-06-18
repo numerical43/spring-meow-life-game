@@ -32,6 +32,7 @@ public class CreateCatView {
                 int returnNumber = sc.nextInt();
 
                 if (returnNumber != 9) {
+
                     break;
                 }
 
