@@ -27,6 +27,8 @@ public class GameView {
                 CatDTO cat = gameController.getCat();
 
                 // 고양이 정보 출력
+                System.out.println("");
+                System.out.println("");
                 System.out.println("종 : " + cat.getCatBreeds() + "     이름 : " + cat.getCatName());
                 System.out.println("레벨 : " + cat.getLevel() + "     경험치 : " + cat.getExp());
                 System.out.println("몸무게 : " + cat.getWeight() + "   에너지 : " + cat.getEnergy());
@@ -36,7 +38,7 @@ public class GameView {
                 System.out.println(" と＿⌒))");
                 System.out.println("　　(_ﾉﾉ");
                 System.out.println("");
-                System.out.println("숫자를 입력해주세요!");
+                System.out.println("숫자를 입력하여 고양이의 행동을 정해주세요!");
                 System.out.print("[1] 잠자기   [2] 밥먹기   [3] 놀기 : ");
 
                 Scanner scanner = new Scanner(new InputStreamReader(System.in));

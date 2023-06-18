@@ -17,6 +17,26 @@ public class MainView {
         int choice = 0;
 
         while (choice != 9) {
+
+            System.out.println("");
+            System.out.println("");
+
+
+            System.out.println("〇");
+            System.out.println("　　ｏ");
+            System.out.println("　　°");
+            System.out.println("　┳┳ ∩∩");
+            System.out.println("　┃┃(･∀･)　☆　　★");
+            System.out.println("┏┻┻┷━Ｏ ┏┷┓┏┷┓");
+            System.out.println("┃Welcome┠┨★┠┨☆┃");
+            System.out.println("┗©━━©┛ ┗©┛┗©┛");
+            System.out.println("");
+            System.out.println("⁜©Team CatHolic.⁜");
+
+
+            System.out.println("");
+            System.out.println("");
+
             System.out.print("[1] 회원가입 [2] 로그인 [9] 프로그램 종료 : ");
             choice = scanner.nextInt();
 

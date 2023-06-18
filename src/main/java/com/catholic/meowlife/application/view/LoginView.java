@@ -18,6 +18,9 @@ public class LoginView {
             try {
                 Scanner sc = new Scanner(System.in);
 
+                System.out.println("");
+                System.out.println("");
+
                 System.out.print("아이디: ");
                 String id = sc.next();
 

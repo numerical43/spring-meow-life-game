@@ -18,10 +18,22 @@ public class CreateCatView {
             try {
                 Scanner sc = new Scanner(System.in);
 
-                System.out.println(" ∧_∧");
-                System.out.println("(･ω･ )");
-                System.out.println(" と＿⌒))");
-                System.out.println("　　(_ﾉﾉ");
+                System.out.println("");
+                System.out.println("");
+
+                System.out.println("                                                    　　　　　／＞　　フ");
+                System.out.println("                                                    　　　　　| 　_　 _ l");
+                System.out.println("                                                    　 　　　／` ミ＿Yノ");
+                System.out.println("                                                    　　 　 /　　　 　 |");
+                System.out.println("                                                    　　　 /　 ヽ　　 ﾉ");
+                System.out.println("                                                    　 　 │　　|　|　|");
+                System.out.println("                                                    　／￣|　　 |　|　|");
+                System.out.println("                                                    　| (￣ヽ＿_ヽ_)__)");
+                System.out.println("                                                    　＼二つ");
+                System.out.println("");
+                System.out.println("                                                    ⁜©Team CatHolic.⁜    ");
+                System.out.println("");
+                System.out.println("");
 
                 System.out.print("입양하실 고양이의 이름을 지어주세요 : ");
                 catName = sc.next();
