@@ -15,10 +15,12 @@ import com.catholic.meowlife.dto.PlayerDTO;
 import com.catholic.meowlife.infra.DB.CatDB;
 import com.catholic.meowlife.infra.DB.PlayerDB;
 import org.springframework.context.annotation.Bean;
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+
 @ComponentScan("com.catholic.meowlife")
 public class ContextConfiguration {
 

@@ -1,12 +1,14 @@
 package com.catholic.meowlife.dto;
 
 import lombok.*;
+import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
+@Setter
 @ToString
+@Component
 public class PlayerDTO {
     private String id;
     private String pw;
