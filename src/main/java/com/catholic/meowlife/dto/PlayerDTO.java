@@ -1,38 +1,17 @@
 package com.catholic.meowlife.dto;
 
-public class PlayerDTO {
+import lombok.*;
+import org.springframework.stereotype.Component;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Component
+public class PlayerDTO {
+    public static PlayerDTO loginPlayer;
     private String id;
     private String pw;
     private String name;
-
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPw() {
-        return pw;
-    }
-
-    public void setPw(String pw) {
-        this.pw = pw;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString(){
-        return "PlayerDTO [id =" + id + "pw =" + pw + "name = " + name +"]";
-    }
 }
