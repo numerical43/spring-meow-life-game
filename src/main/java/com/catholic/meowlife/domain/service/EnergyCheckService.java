@@ -17,7 +17,7 @@ public class EnergyCheckService {
         return false;
     }
 
-    public boolean checkLowEnergy(CatDTO catDTO) {
+    public boolean checkEnergyLow(CatDTO catDTO) {
         if(catDTO.getEnergy()<=30){
             return true;
         }

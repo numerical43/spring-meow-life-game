@@ -1,5 +1,6 @@
 package com.catholic.meowlife.application.service;
 
+import com.catholic.meowlife.application.controller.EndingController;
 import com.catholic.meowlife.domain.entity.CatEntity;
 import com.catholic.meowlife.domain.repository.CatRepository;
 import com.catholic.meowlife.domain.repository.PlayerRepository;
@@ -18,8 +19,8 @@ public class GameService {
     @Autowired
     private EndingController endingController;
 
-    @Autowired
-    private WeightCheckService weightCheckService;
+//    @Autowired
+//    private WeightCheckService weightCheckService;
     @Autowired
     private ExpCheckService expCheckService;
     @Autowired
@@ -73,7 +74,7 @@ public class GameService {
         boolean isMaxWeight = weightCheckService.checkMaxWeight(cat);
         boolean isMinWeight = weightCheckService.checkMinWeight(cat);
         boolean isLowEnergy = energyCheckService.checkEnergyLow(cat);
-        boolean isZeroEnergy = energyCheckService.checkEnbergyZero(cat);
+        boolean isZeroEnergy = energyCheckService.checkEnergyZero(cat);
 
         if (isWarningWeight || isLowEnergy) {
             if (isWarningWeight)
@@ -83,7 +84,7 @@ public class GameService {
                 System.out.println("경고! 에너지가 30 이하입니다!");
         }
         else if (isMaxWeight) {
-            endingController.reult(1, cat);
+            endingController.result(1, cat);
         }
         else if (isZeroEnergy || isMinWeight) {
             endingController.result(2, cat);

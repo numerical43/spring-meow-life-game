@@ -20,9 +20,6 @@ public class PlayerRepository {
     @Autowired
     CatEntity catEntity;
 
-    @Autowired
-    PlayerDTO loginPlayer;
-
 
 
     public void returnDBIdPw(String userId,String userPw){

@@ -39,32 +39,6 @@ public class Application {
 
         System.out.println("");
 
-
-        while(true) {
-            try {
-                Scanner sc = new Scanner(System.in);
-
-
-                System.out.print("아이디: ");
-                String id = sc.next();
-
-                System.out.print("비밀번호: ");
-                String pw = sc.next();
-
-                System.out.print("이름: ");
-                String name = sc.next();
-
-                ApplicationContext context = new AnnotationConfigApplicationContext("com.catholic.meowlife");
-
-                RegisterController registerController = context.getBean("registerController", RegisterController.class);
-
-                registerController.gotoRegisterService(new PlayerDTO(id, pw, name));
-
-                break;
-            }catch (IllegalArgumentException e){
-                System.out.println(e.getMessage().toString());
-            } System.out.println("아이디와 비밀번호는 영문, 숫자로만 이루어지는 5~20자 단어로 해주세요.");
-
         while(true) {
             try {
                 Scanner sc = new Scanner(System.in);

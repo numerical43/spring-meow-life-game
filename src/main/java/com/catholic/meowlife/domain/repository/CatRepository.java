@@ -60,3 +60,4 @@ public class CatRepository {
     public void deleteCatDB(){
         CatDB.getCatMap().remove(playerDTO.getId());
 }
+}
