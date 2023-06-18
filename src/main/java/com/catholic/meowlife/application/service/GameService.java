@@ -124,7 +124,7 @@ public class GameService {
 
         // 몸무게 증가 로직 {+0.5}
         catEntity.setWeight(cat.getWeight() + 0.5);
-        catRepository.updateWeight(cat, loginPlayer.getId());
+        catRepository.updateWeight(catEntity, loginPlayer.getId());
 
         boolean isWarningWeight = weightCheckService.checkWarningWeght(cat);
         boolean isMaxWeight = weightCheckService.checkMaxWeight(cat);

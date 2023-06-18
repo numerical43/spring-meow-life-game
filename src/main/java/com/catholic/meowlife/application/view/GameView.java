@@ -16,8 +16,6 @@ public class GameView {
     @Autowired
     private GameController gameController;
 
-    @Autowired
-    private PlayerDTO loginPlayer;
 
     public void gameView() {
         boolean exit = false;
