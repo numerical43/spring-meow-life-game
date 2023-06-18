@@ -1,6 +1,7 @@
 package com.catholic.meowlife.config;
 
 
+
 import com.catholic.meowlife.application.controller.RegisterController;
 import com.catholic.meowlife.application.service.RegisterService;
 import com.catholic.meowlife.application.view.BadEnding1App;
@@ -16,12 +17,12 @@ import com.catholic.meowlife.infra.DB.CatDB;
 import com.catholic.meowlife.infra.DB.PlayerDB;
 import org.springframework.context.annotation.Bean;
 
+
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-
-@ComponentScan("com.catholic.meowlife")
+@ComponentScan(basePackages = "com.catholic.meowlife")
 public class ContextConfiguration {
 
     @Bean

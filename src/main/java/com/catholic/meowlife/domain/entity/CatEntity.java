@@ -17,3 +17,4 @@ public class CatEntity {
     private int exp;
     private int level;
 }
+
