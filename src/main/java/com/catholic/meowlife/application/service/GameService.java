@@ -35,7 +35,7 @@ public class GameService {
     private CatEntity catEntity;
 
     public void playCat() {
-        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getName());
+        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getId());
         cat.setCatName(catEntity.getCatName());
         cat.setCatBreeds(catEntity.getCatBreeds());
         cat.setExp(catEntity.getExp());
@@ -49,12 +49,18 @@ public class GameService {
             case "코숏" : {
                 catEntity.setWeight(cat.getWeight() - 0.4);
                 catEntity.setEnergy(cat.getEnergy() - 20);
+                cat.setWeight(cat.getWeight() - 0.4);
+                cat.setEnergy(cat.getEnergy() - 20);
+
                 catRepository.updateWeight(catEntity, PlayerDTO.loginPlayer.getId());
                 break;
             }
             case "러시안블루" : {
                 catEntity.setWeight(cat.getWeight() - 0.3);
                 catEntity.setEnergy(cat.getEnergy() - 15);
+                cat.setWeight(cat.getWeight() - 0.3);
+                cat.setEnergy(cat.getEnergy() - 15);
+
                 catRepository.updateWeight(catEntity, PlayerDTO.loginPlayer.getId());
                 break;
 
@@ -62,6 +68,9 @@ public class GameService {
             case "노르웨이숲" : {
                 catEntity.setWeight(cat.getWeight() - 0.2);
                 catEntity.setEnergy(cat.getEnergy() - 10);
+                cat.setWeight(cat.getWeight() - 0.2);
+                cat.setEnergy(cat.getEnergy() - 10);
+
                 catRepository.updateWeight(catEntity, PlayerDTO.loginPlayer.getId());
                 break;
             }
@@ -89,6 +98,9 @@ public class GameService {
 
         // 경험치 증가 로직 {+15}
         catEntity.setExp(cat.getExp() + 15);
+        cat.setExp(cat.getExp() + 15);
+
+
         boolean isEXPMax = expCheckService.checkEXPMax(cat);
         boolean isLevelMax = levelCheckService.checkLevelMax(cat);
 
@@ -107,7 +119,7 @@ public class GameService {
     }
 
     public void feedCat() {
-        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getName());
+        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getId());
         cat.setCatName(catEntity.getCatName());
         cat.setCatBreeds(catEntity.getCatBreeds());
         cat.setExp(catEntity.getExp());
@@ -117,10 +129,14 @@ public class GameService {
 
         // 에너지 증가 로직 {+5}
         catEntity.setEnergy(cat.getEnergy() + 5);
+        cat.setEnergy(cat.getEnergy() + 5);
+
         catRepository.updateEnergy(catEntity, PlayerDTO.loginPlayer.getId());
 
         // 몸무게 증가 로직 {+0.5}
         catEntity.setWeight(cat.getWeight() + 0.5);
+        cat.setWeight(cat.getWeight() + 0.5);
+
         catRepository.updateWeight(catEntity, PlayerDTO.loginPlayer.getId());
 
         boolean isWarningWeight = weightCheckService.checkWarningWeght(cat);
@@ -135,6 +151,7 @@ public class GameService {
 
         // 경험치 10 증가 로직
         catEntity.setExp(cat.getExp() + 10);
+        cat.setExp(cat.getExp() + 10);
 
         boolean isEXPMax = expCheckService.checkEXPMax(cat);
         boolean isLevelMax = levelCheckService.checkLevelMax(cat);
@@ -145,6 +162,9 @@ public class GameService {
         else if ((isEXPMax) && (!isLevelMax)) {
             catEntity.setExp(0);
             catEntity.setLevel(cat.getLevel() + 1);
+            cat.setExp(0);
+            cat.setLevel(cat.getLevel()+1);
+
             catRepository.updateExp(catEntity, PlayerDTO.loginPlayer.getId());
             catRepository.updateLevel(catEntity, PlayerDTO.loginPlayer.getId());
         }
@@ -154,7 +174,7 @@ public class GameService {
     }
 
     public void sleepCat() {
-        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getName());
+        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getId());
         cat.setCatName(catEntity.getCatName());
         cat.setCatBreeds(catEntity.getCatBreeds());
         cat.setExp(catEntity.getExp());
@@ -164,6 +184,7 @@ public class GameService {
 
         // 경험치 5 증가 로직
         catEntity.setExp(cat.getExp() + 5);
+        cat.setExp(cat.getExp() + 5);
 
         boolean isEXPMax = expCheckService.checkEXPMax(cat);
         boolean isLevelMax = levelCheckService.checkLevelMax(cat);

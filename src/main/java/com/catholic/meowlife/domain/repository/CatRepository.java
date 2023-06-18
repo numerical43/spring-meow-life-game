@@ -52,8 +52,8 @@ public class CatRepository {
     
     public void createCatInDB(String catName, String catBreeds) {
         catEntity = new CatEntity(catName, catBreeds, 50, 2, 0, 1);
-        playerEntity = PlayerDB.getPlayerMap().get(playerDTO.getId());
-        CatDB.getCatMap().put(playerEntity.getId(), catEntity);
+        String playerId = PlayerDTO.loginPlayer.getId();
+        CatDB.getCatMap().put(playerId, catEntity);
     }
   
     public void deleteCatDB(){
