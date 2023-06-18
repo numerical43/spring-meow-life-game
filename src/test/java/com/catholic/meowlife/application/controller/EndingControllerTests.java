@@ -41,7 +41,7 @@ public class EndingControllerTests {
     public void checkDeleteDBBadEnding2(){
         CatDB.getCatMap().put(playerDTO.getId(), new CatEntity("test","코숏",50,20,10,1));
         int before = CatDB.getCatMap().size();
-        endingController.result(1, new CatDTO("test","코숏",0,0,10,1));
+        endingController.result(2, new CatDTO("test","코숏",0,0,10,1));
         int after = CatDB.getCatMap().size();
 
         Assertions.assertEquals(1, before-after);
@@ -52,7 +52,7 @@ public class EndingControllerTests {
     public void checkDeleteDBHappyEnding(){
         CatDB.getCatMap().put(playerDTO.getId(), new CatEntity("test","코숏",50,20,10,1));
         int before = CatDB.getCatMap().size();
-        endingController.result(1, new CatDTO("test","코숏",0,0,10,1));
+        endingController.result(3, new CatDTO("test","코숏",0,0,10,1));
         int after = CatDB.getCatMap().size();
         Assertions.assertEquals(1, before-after);
     }

@@ -18,7 +18,27 @@ public class Application {
 
     public static void main(String[] args) {
 
-        System.out.println("아이디와 비밀번호는 영문, 숫자로만 이루어지는 5~20자 단어로 해주세요.");
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+        System.out.println("■■       ■■   ■■■■■■■■■■  ■■■■■■■■■   ■■       ■■          ■■         ■■■■■■■■■  ■■■■■■■■■   ■■■■■■■■■■");
+        System.out.println("■■■■   ■■■■  ■■          ■■■     ■■■  ■■   ■   ■■          ■■             ■      ■■         ■■         ");
+        System.out.println("■■  ■■■  ■■  ■■■■■■■■■■  ■■■     ■■■  ■■  ■■■  ■■          ■■             ■      ■■■■■■■■■  ■■■■■■■■■■ ");
+        System.out.println("■■   ■   ■■  ■■          ■■■     ■■■  ■■■■   ■■■■          ■■             ■      ■■         ■■         ");
+        System.out.println("■■       ■■   ■■■■■■■■■■  ■■■■■■■■■   ■■       ■■          ■■■■■■■■■  ■■■■■■■■■  ■■          ■■■■■■■■■■");
+
+        System.out.println("");
+
+        System.out.println("                                      ⁜©Team CatHolic.⁜                                              ");
+
+        System.out.println("                 ⁜아이디와 비밀번호는 영문, 숫자로만 이루어지는 5~20자 단어로 해주세요.⁜                         ");
+
+        System.out.println("");
+
 
         while(true) {
             try {
