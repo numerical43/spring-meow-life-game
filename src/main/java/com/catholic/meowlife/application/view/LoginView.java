@@ -13,8 +13,7 @@ import java.util.Scanner;
 public class LoginView {
     @Autowired
     LoginService loginService;
-
-    public static void main(String[] args) {
+    public void loginView(){
         while (true) {
             try {
                 Scanner sc = new Scanner(System.in);

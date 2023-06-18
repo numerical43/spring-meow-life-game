@@ -1,5 +1,9 @@
 package com.catholic.meowlife.application.view;
 
+import com.catholic.meowlife.application.controller.LoginController;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class Application {
 
     public static void main(String[] args) {
