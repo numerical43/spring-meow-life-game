@@ -18,17 +18,22 @@ public class CreateCatView {
             try {
                 Scanner sc = new Scanner(System.in);
 
-                System.out.print("고양이의 이름을 입력해주세요 : ");
+                System.out.println(" ∧_∧");
+                System.out.println("(･ω･ )");
+                System.out.println(" と＿⌒))");
+                System.out.println("　　(_ﾉﾉ");
+
+                System.out.print("입양하실 고양이의 이름을 지어주세요 : ");
                 catName = sc.next();
 
-                System.out.print("고양이의 종을 입력해주세요. [1] 코숏 [2] 러시안블루 [3] 노르웨이숲 : ");
+                System.out.print("입양하실 고양이의 종을 선택해주세요. [1] 코숏 [2] 러시안블루 [3] 노르웨이숲 : ");
                 catBreeds = sc.next();
 
                 if (!("코숏".equals(catBreeds) || "러시안블루".equals(catBreeds) || "노르웨이숲".equals(catBreeds))) {
                     throw new IllegalArgumentException("종을 정확히 입력해주세요!!");
                 }
 
-                System.out.print("고양이를 다시 생성하시려면 숫자 9번을 입력해주세요. 원하지 않으면 9번을 제외한 다른 숫자를 입력해주세요. : ");
+                System.out.print("고양이를 다시 입양하시려면 숫자 9번을 입력해주세요. 원하지 않으면 9번을 제외한 다른 숫자를 입력해주세요. : ");
                 int returnNumber = sc.nextInt();
 
                 if (returnNumber != 9) {

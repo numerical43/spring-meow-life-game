@@ -36,10 +36,8 @@ public class GameView {
                 System.out.println(" と＿⌒))");
                 System.out.println("　　(_ﾉﾉ");
                 System.out.println("");
-                System.out.println("");
                 System.out.println("숫자를 입력해주세요!");
-                System.out.println("");
-                System.out.println("[1] 잠자기   [2] 밥먹기   [3] 놀기");
+                System.out.print("[1] 잠자기   [2] 밥먹기   [3] 놀기 : ");
 
                 Scanner scanner = new Scanner(new InputStreamReader(System.in));
                 int input = scanner.nextInt();
