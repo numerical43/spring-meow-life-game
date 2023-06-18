@@ -9,7 +9,6 @@ public class CatController {
     @Autowired
     CreateCatService createCatService;
 
-
     public void createWhatCat(String catName, String catBreeds) {
         if (catBreeds.equals("코숏")){
             createCatService.createCat(catName, catBreeds);
