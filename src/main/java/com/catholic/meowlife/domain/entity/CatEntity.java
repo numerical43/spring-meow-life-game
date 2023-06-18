@@ -1,19 +1,22 @@
 package com.catholic.meowlife.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+
+import org.springframework.stereotype.Component;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
 @Getter
 @ToString
+@Component
 public class CatEntity {
     private String catName;
     private String catBreeds;
     private int energy;
     private double weight;
     private int exp;
+    private int level;
 }
 

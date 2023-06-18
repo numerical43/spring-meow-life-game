@@ -1,28 +1,42 @@
 package com.catholic.meowlife.application.service;
 
-import org.springframework.stereotype.Controller;
 
-import java.util.Scanner;
+import com.catholic.meowlife.domain.entity.CatEntity;
+import com.catholic.meowlife.domain.entity.PlayerEntity;
+import com.catholic.meowlife.domain.repository.PlayerRepository;
+import com.catholic.meowlife.domain.service.IsPlayerCatCheckService;
+import com.catholic.meowlife.dto.PlayerDTO;
+import com.catholic.meowlife.infra.DB.CatDB;
+import com.catholic.meowlife.infra.DB.PlayerDB;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LoginService {
+    @Autowired
+    PlayerRepository playerRepository;
+    @Autowired
+    PlayerEntity playerEntity;
+
+    @Autowired
+    PlayerDB playerDB;
+
+    @Autowired
+    IsPlayerCatCheckService isPlayerCatCheckService;
 
 
-/*
- * 로그인 기능을 구현하세요.
- *
- * 2. DB에 저장된 값과 사용자의 입력값이 일치하는지 확인합니다.
- * */
+    public void logIn(String loginId, String loginPw) {
+        playerRepository.returnDBIdPw(loginId, loginPw);
+        setLoginPlayer();
+    }
 
-//public class LoginService {
-//    public static void main(String[] args) {
-//        System.out.println("아이디를 입력해주세요 : ");
-//
-//        Scanner sc = new Scanner(System.in);
-//        String id;
-//        id = sc.next();
-//
-//        System.out.println("비밀번호를 입력해주세요 : ");
-//
-//        Scanner sc2 = new Scanner(System.in);
-//        String pw;
-//        pw = sc.next();
-//    }
-//}t
+    public void setLoginPlayer(){
+        PlayerDTO.loginPlayer = new PlayerDTO(playerEntity.getId(), playerEntity.getPw(), playerEntity.getName());
+    }
+
+    public void playerHasCat(){
+        String userId = PlayerDTO.loginPlayer.getId();
+        boolean hasCat = playerRepository.HasCat(userId);
+        isPlayerCatCheckService.isCat(hasCat);
+    }
+}
