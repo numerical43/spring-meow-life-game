@@ -1,22 +1,26 @@
 package com.catholic.meowlife.application.view;
 
-import com.catholic.meowlife.application.controller.LoginController;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.catholic.meowlife.application.controller.RegisterController;
-import com.catholic.meowlife.application.service.RegisterService;
-import com.catholic.meowlife.domain.service.IdCheckService;
-import com.catholic.meowlife.dto.PlayerDTO;
+import com.catholic.meowlife.domain.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.catholic.meowlife.application.controller.RegisterController;
+import com.catholic.meowlife.dto.PlayerDTO;
+import org.springframework.stereotype.Component;
+
 import java.util.Scanner;
 
-public class Application {
+@Component
+public class RegisterView {
+    @Autowired
+    PlayerRepository playerRepository;
 
-    public static void main(String[] args) {
+    @Autowired
+    PlayerDTO playerDTO;
+
+
+    public void registerView() {
 
 
         System.out.println("");
@@ -57,12 +61,14 @@ public class Application {
 
                 RegisterController registerController = context.getBean("registerController", RegisterController.class);
 
-                registerController.gotoRegisterService(new PlayerDTO(id, pw, name));
-
-                break;
+                boolean result = registerController.gotoRegisterService(new PlayerDTO(id, pw, name));
+                if (result){
+                    break;
+                }
             }catch (IllegalArgumentException e){
                 System.out.println(e.getMessage().toString());
             }
         }
+        playerRepository.addPlayer(playerDTO);
     }
 }

@@ -10,7 +10,9 @@ public class RegisterController {
     @Autowired
     RegisterService registerService;
 
-    public void gotoRegisterService(PlayerDTO playerDTO){
-        registerService.signIn(playerDTO);
+    public boolean gotoRegisterService(PlayerDTO playerDTO){
+        boolean registerResult = registerService.signIn(playerDTO);
+
+        return registerResult;
     }
 }

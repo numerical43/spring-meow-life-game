@@ -28,7 +28,6 @@ public class LoginService {
     public void logIn(String loginId, String loginPw) {
         playerRepository.returnDBIdPw(loginId, loginPw);
         setLoginPlayer();
-        playerHasCat();
     }
 
     public void setLoginPlayer(){

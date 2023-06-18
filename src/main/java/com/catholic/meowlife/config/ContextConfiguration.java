@@ -6,7 +6,8 @@ package com.catholic.meowlife.config;
 import com.catholic.meowlife.application.controller.EndingController;
 import com.catholic.meowlife.application.controller.GameController;
 import com.catholic.meowlife.application.service.GameService;
-import com.catholic.meowlife.application.view.CreateCatView;
+import com.catholic.meowlife.application.service.LoginService;
+import com.catholic.meowlife.application.view.*;
 //import com.catholic.meowlife.application.view.GameView;
 import com.catholic.meowlife.domain.entity.CatEntity;
 import com.catholic.meowlife.domain.entity.PlayerEntity;
@@ -20,9 +21,6 @@ import com.catholic.meowlife.domain.service.IdCheckService;
 
 import com.catholic.meowlife.application.controller.RegisterController;
 import com.catholic.meowlife.application.service.RegisterService;
-import com.catholic.meowlife.application.view.BadEnding1App;
-import com.catholic.meowlife.application.view.BadEnding2App;
-import com.catholic.meowlife.application.view.HappyEndingApp;
 import com.catholic.meowlife.domain.entity.CatEntity;
 import com.catholic.meowlife.domain.entity.PlayerEntity;
 import com.catholic.meowlife.domain.repository.CatRepository;
@@ -49,6 +47,9 @@ public class ContextConfiguration {
 //    }
 
     // Entity
+
+//    @Bean
+//    public GameView gameView(){ return new GameView();}
     @Bean
     public CatEntity catEntity() {
         return new CatEntity();
@@ -166,8 +167,18 @@ public class ContextConfiguration {
         HappyEndingApp happyEndingApp () {
             return new HappyEndingApp();
         }
+
         @Bean
         public CreateCatView createCatView(){
             return new CreateCatView();
         }
+
+//        @Bean
+//        public LoginService loginService(){
+//            return new LoginService();
+//        }
+//        @Bean
+//        public LoginView loginView() {
+//            return new LoginView();
+//        }
 }

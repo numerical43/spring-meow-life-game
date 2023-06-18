@@ -35,5 +35,6 @@ public class LoginView {
                 System.out.println(e.getMessage().toString());
             }
         }
+        loginService.playerHasCat();
     }
 }

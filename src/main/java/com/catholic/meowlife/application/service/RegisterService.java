@@ -12,7 +12,8 @@ import java.util.Map;
 @Service
 public class RegisterService {
 
-    private static PlayerDTO playerDTO;
+    @Autowired
+    PlayerDTO playerDTO;
 
     @Autowired
     IdCheckService idCheckService;
@@ -20,17 +21,18 @@ public class RegisterService {
     @Autowired
     PlayerRepository playerRepository;
 
-    public String signIn(PlayerDTO playerDTO) {
+    public Boolean signIn(PlayerDTO playerDTO) {
 
         this.playerDTO = playerDTO;
             if (idCheckService.checkDuplicateId(playerDTO)
                     && idCheckService.checkPwLength(playerDTO)
                     && idCheckService.checkIdLength(playerDTO)
                     && idCheckService.checkCorrectId(playerDTO)) {
-                playerRepository.addPlayer(playerDTO);
+//                playerRepository.addPlayer(playerDTO);
+                return true;
             }
-            return PlayerDB.getPlayerMap().toString();
+            else {
+                return false;
+            }
     }
-
-
 }
