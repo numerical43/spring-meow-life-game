@@ -84,10 +84,10 @@ public class GameService {
 
         if (isWarningWeight || isLowEnergy) {
             if (isWarningWeight)
-                System.out.println("경고! 고양이의 몸무게를 신경써주세요!");
+                System.out.println("\n경고! 고양이의 몸무게를 신경써주세요!");
 
             if (isLowEnergy)
-                System.out.println("경고! 에너지가 30 이하입니다!");
+                System.out.println("\n경고! 에너지가 30 이하입니다!");
         }
         if (isMaxWeight) {
             endingController.result(2, cat);
@@ -141,12 +141,22 @@ public class GameService {
 
         boolean isWarningWeight = weightCheckService.checkWarningWeght(cat);
         boolean isMaxWeight = weightCheckService.checkMaxWeight(cat);
+        boolean isMinWeight = weightCheckService.checkMinWeight(cat);
+        boolean isLowEnergy = energyCheckService.checkEnergyLow(cat);
+        boolean isZeroEnergy = energyCheckService.checkEnergyZero(cat);
 
-        if (isWarningWeight) {
-            System.out.println("경고! 고양이의 몸무게를 신경써주세요!");
+        if (isWarningWeight || isLowEnergy) {
+            if (isWarningWeight)
+                System.out.println("\n경고! 고양이의 몸무게를 신경써주세요!");
+
+            if (isLowEnergy)
+                System.out.println("\n경고! 에너지가 30 이하입니다!");
         }
         if (isMaxWeight) {
             endingController.result(2, cat);
+        }
+        if (isZeroEnergy || isMinWeight) {
+            endingController.result(1, cat);
         }
 
         // 경험치 10 증가 로직
@@ -171,6 +181,7 @@ public class GameService {
         else {
             catRepository.updateExp(catEntity, PlayerDTO.loginPlayer.getId());
         }
+
     }
 
     public void sleepCat() {
@@ -201,16 +212,40 @@ public class GameService {
         else {
             catRepository.updateExp(catEntity, PlayerDTO.loginPlayer.getId());
         }
+
+        // 에너지 10 증가
+        catEntity.setEnergy(cat.getEnergy() + 10);
+        cat.setEnergy(cat.getEnergy() + 10);
+
+        boolean isWarningWeight = weightCheckService.checkWarningWeght(cat);
+        boolean isMaxWeight = weightCheckService.checkMaxWeight(cat);
+        boolean isMinWeight = weightCheckService.checkMinWeight(cat);
+        boolean isLowEnergy = energyCheckService.checkEnergyLow(cat);
+        boolean isZeroEnergy = energyCheckService.checkEnergyZero(cat);
+
+        if (isWarningWeight || isLowEnergy) {
+            if (isWarningWeight)
+                System.out.println("\n경고! 고양이의 몸무게를 신경써주세요!");
+
+            if (isLowEnergy)
+                System.out.println("\n경고! 에너지가 30 이하입니다!");
+        }
+        if (isMaxWeight) {
+            endingController.result(2, cat);
+        }
+        if (isZeroEnergy || isMinWeight) {
+            endingController.result(1, cat);
+        }
     }
 
     public CatDTO getCat() {
-        catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getId());
+        CatEntity catEntity = catRepository.getCatEntity(PlayerDTO.loginPlayer.getId());
         cat.setCatName(catEntity.getCatName());
+        cat.setCatBreeds(catEntity.getCatBreeds());
         cat.setExp(catEntity.getExp());
+        cat.setWeight(catEntity.getWeight());
         cat.setLevel(catEntity.getLevel());
         cat.setEnergy(catEntity.getEnergy());
-        cat.setCatBreeds(catEntity.getCatBreeds());
-        cat.setWeight(catEntity.getWeight());
 
         return cat;
     }

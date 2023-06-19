@@ -15,7 +15,8 @@ public class GameView {
 
     @Autowired
     private GameController gameController;
-
+    @Autowired
+    private CatDTO cat;
 
     public void gameView() {
         boolean exit = false;
@@ -24,8 +25,7 @@ public class GameView {
         while(!exit) {
             try {
                 // 고양이 출력
-                CatDTO cat = gameController.getCat();
-
+                cat = gameController.getCat();
                 // 고양이 정보 출력
                 System.out.println("");
                 System.out.println("");
