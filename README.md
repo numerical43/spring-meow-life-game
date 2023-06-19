@@ -2,7 +2,7 @@
 
 ---
 
-## 프로젝트 소개
+## 😺 프로젝트 소개
 - 스프링을 이용한 텍스트 기반 고양이 키우기 프로젝트
 - 메인화면은 `회원가입`, `로그인`, `프로그램 종료`으로 구성
 - 사용자가 키울 수 있는 고양이는 3가지
@@ -10,9 +10,44 @@
 - 고양이의 행동은 `잠자기`, `밥먹기`, `놀기`로 구성
 - 각 행동마다 고양이의 스탯이 증가하거나 감소
 
+
+## 👋 CatHolic 팀원 소개
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/bbbbooo"><img src="https://avatars.githubusercontent.com/bbbbooo" width="150px;" alt="">
+    <td align="center"><a href="https://github.com/Dylan-SonJungin"><img src="https://avatars.githubusercontent.com/Dylan-SonJungin" width="150px;" alt="">
+    <td align="center"><a href="https://github.com/raxchaz"><img src="https://avatars.githubusercontent.com/raxchaz" width="150px;" alt="">
+    <td align="center"><a href="https://github.com/numerical43"><img src="https://avatars.githubusercontent.com/numerical43" width="150px;" alt="">
+    <td align="center"><a href="https://github.com/hodin030"><img src="https://avatars.githubusercontent.com/hodin030" width="150px;" alt="">
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/bbbbooon"><b>이현석</b></td>
+    <td align="center"><a href="https://github.com/Dylan-SonJungin"><b>손정인</b></td>
+    <td align="center"><a href="https://github.com/raxchaz"><b>라현지</b></td>
+    <td align="center"><a href="https://github.com/numerical43"><b>강수의</b></td>
+    <td align="center"><a href="https://github.com/hodin030"><b>이효진</b></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Java, Python</strong></td>
+    <td align="center"><strong>Java</strong></td>
+    <td align="center"><strong>Java</strong></td>
+    <td align="center">C, <strong>Java</strong></td>
+    <td align="center"><strong>Java</strong></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Lee Hyun Seok</strong></td>
+    <td align="center"><strong>Son Jung In</strong></td>
+    <td align="center"><strong>Ra Hyeon Ji</strong></td>
+    <td align="center"><strong>SUI</strong></td>
+    <td align="center"><strong>Lee Hyo Jin</strong></td>
+  </tr>
+</table>
+
 <br>
 
-## 요구사항
+
+## 🗒️ 요구사항
 - 기능별로 각각의 상황을 테스트하는 코드를 구현한다.
 - MVC 패턴을 활용하여 코드를 간소화한다.
 
@@ -38,15 +73,11 @@
 #### 메인 콘솔
 - 회원가입, 로그인, 프로그램 종료 콘솔
 
-<br>
 
 - 회원가입
   1. 아이디, 비밀번호, 사용자 이름을 입력받는다.
-
-<br>
-
-2. 아이디가 중복일 시, `"아이디가 중복입니다. 다시 입력해주세요"` 출력 후 다시 회원가입 콘솔로 이동
-   - 아이디와 비밀번호는 영문과 숫자로만 이루어져있다. 
+  2. 아이디가 중복일 시, `"아이디가 중복입니다. 다시 입력해주세요"` 출력 후 다시 회원가입 콘솔로 이동
+     - 아이디와 비밀번호는 영문과 숫자로만 이루어져있다. 
 > 예외처리는 IllegalArgumentException()으로 한다.   
 
 
@@ -59,10 +90,9 @@
   3. 아이디와 비밀번호가 유저 DB와 일치하는지 확인 후 완료되면 고양이 키우기 화면으로 이동
 
 
-<br>
 
 ---
-## 고양이 콘솔 (로그인 성공)
+## 🐈 고양이 콘솔 (로그인 성공)
 
 1. 고양이가 있는지 없는지 확인 후 없으면 고양이 선택 메소드로 이동, 있으면 바로 고양이 키우기 메소드로 이동
 2. 고양이 선택 메소드
@@ -84,13 +114,13 @@
 <br>
 
 ### *엔딩*
-#### 해피엔딩
+#### ❤️‍🔥 해피엔딩
 
 ![img_1.png](img_1.png)
 
 <br>
 
-#### 배드엔딩
+#### 👿 배드엔딩
 1. 몸무게 0.5 이하 || 에너지 0 이하
 
 ![img_3.png](img_3.png)
@@ -101,10 +131,9 @@
 
 > 엔딩 화면 출력 이후 다시 고양이를 생성할 수 있다.
 
-<br>
 
 ---
-## 프로젝트 아키텍처
+## 🧱 프로젝트 아키텍처
 
 ### - 패키지 구조
 
@@ -115,8 +144,6 @@
 ### - CI/CD
 
 ![img.png](img.png)
-
-<br>
 
 ---
 
