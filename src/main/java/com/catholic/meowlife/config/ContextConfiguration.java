@@ -35,9 +35,11 @@ import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
-@ComponentScan("com.catholic.meowlife")
+@ComponentScan(basePackages = "com.catholic.meowlife")
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class ContextConfiguration {
 
     // View
@@ -133,45 +135,45 @@ public class ContextConfiguration {
     public PlayerDB playerDB() {
         return new PlayerDB();
     }
-        @Bean
-        public PlayerEntity playerGenerator () {
-            return new PlayerEntity();
-        }
-        @Bean
-        public PlayerDTO dtoGenerator () {
-            return new PlayerDTO();
-        }
+    @Bean
+    public PlayerEntity playerGenerator () {
+        return new PlayerEntity();
+    }
+    @Bean
+    public PlayerDTO dtoGenerator () {
+        return new PlayerDTO();
+    }
 
-        @Bean
-        public IdCheckService idCheckService () {
-            return new IdCheckService();
-        }
+    @Bean
+    public IdCheckService idCheckService () {
+        return new IdCheckService();
+    }
 
-        @Bean
-        public RegisterService registerService () {
-            return new RegisterService();
-        }
-        @Bean
-        RegisterController registerController () {
-            return new RegisterController();
-        }
-        @Bean
-        BadEnding1App badEnding1App () {
-            return new BadEnding1App();
-        }
-        @Bean
-        BadEnding2App badEnding2App () {
-            return new BadEnding2App();
-        }
-        @Bean
-        HappyEndingApp happyEndingApp () {
-            return new HappyEndingApp();
-        }
+    @Bean
+    public RegisterService registerService () {
+        return new RegisterService();
+    }
+    @Bean
+    RegisterController registerController () {
+        return new RegisterController();
+    }
+    @Bean
+    BadEnding1App badEnding1App () {
+        return new BadEnding1App();
+    }
+    @Bean
+    BadEnding2App badEnding2App () {
+        return new BadEnding2App();
+    }
+    @Bean
+    HappyEndingApp happyEndingApp () {
+        return new HappyEndingApp();
+    }
 
-        @Bean
-        public CreateCatView createCatView(){
-            return new CreateCatView();
-        }
+    @Bean
+    public CreateCatView createCatView(){
+        return new CreateCatView();
+    }
 
 //        @Bean
 //        public LoginService loginService(){
